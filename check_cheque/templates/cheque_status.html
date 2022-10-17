@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Cheque Manager - Cheque Status</title>
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+   </head>
+   <body>
+      <h1>Income by status</h1>
+      <ul><a href="{{ url_for('root') }}">Back to Home</a></ul>
+    <!-- <p>{{ids}}</p> -->
+    <!-- <p>{{figuresJSON}}</p> -->
+    <div id="{{ids[0]}}"></div>
+    <div id="{{ids[1]}}"></div>
+    <script type="text/javascript">
+        //plot the figure with id
+        //id must match the div id above in the html
+
+        var figures = {{figuresJSON | safe}};
+        var ids = {{ids | safe}};
+
+        for(var i in figures){
+            Plotly.plot(ids[i],
+            figures[i].data,
+            figures[i].layout || {});
+        }
+    </script>
+   </body>
+</html>

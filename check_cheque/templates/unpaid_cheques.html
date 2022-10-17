@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Bounced Cheques</title>
+   </head>
+   <body>
+      <h1>Bounced Cheques List</h1>
+      <p><a href="{{url_for('root')}}">Back to Home</a></p>
+      {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+      {% endfor %}
+   </body>
+</html>

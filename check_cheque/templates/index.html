@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Cheque Manager</title>
+   </head>
+   <body>
+      <h1>Choose an option</h1>
+      <ul><a href="{{ url_for('unpaid_cheques') }}">Bounced Cheques List</a></ul>
+      <ul><a href="{{ url_for('undeposited_cheques') }}">Undeposited Cheques List</a></ul>
+      <ul><a href="{{ url_for('cheque_status') }}">Cheques Status</a></ul>
+   </body>
+</html>
